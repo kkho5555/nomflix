@@ -11,8 +11,11 @@ TV쇼, 영화등 컨텐츠의 정보
 
 ## API Verbs
 
-- [ ] Now playing (Movie)
-- [ ] Upcoming (Movie)
-- [ ] Top rated(TV, Movie)
-- [ ] Popular (TV, Movie)
-- [ ] Airing today (TV)
+- [x] Now playing (Movie)
+- [x] Upcoming (Movie)
+- [x] Top rated(TV)
+- [x] Popular (TV, Movie)
+- [x] Airing today (TV)
+- [x] Movie Detail
+- [x] TV Show Detail
+- [x] Search (TV, Movie)
