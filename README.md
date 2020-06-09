@@ -22,7 +22,7 @@ TV쇼, 영화등 컨텐츠의 정보
 
 ## To add content
 
-- [ ] IMDB Link
+- [x] IMDB Link
 - [ ] Tabs inside of Movie / Show Details (YT Videos, Production Company & Countries)
 - [ ] Collection Link
 - [ ] "/collections" Route
