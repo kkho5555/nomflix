@@ -28,7 +28,7 @@
   "eslintConfig": {
     "extends": "react-app"
   },
-  "homepage": "https://kkho5555.github.io/nomflix",
+  "homepage": "https://kknomflix.netlify.app/",
   "browserslist": {
     "production": [
       ">0.2%",
