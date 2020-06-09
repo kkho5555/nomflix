@@ -11,7 +11,7 @@ api.interceptors.request.use(config => {
   return config;
 });
 
-const movieAPI = {
+export const movieAPI = {
   nowPlaying: () => api.get('movie/now_playing'),
   upcoming: () => api.get('movie/upcoming'),
   popular: () => api.get('movie/popular'),
@@ -22,10 +22,10 @@ const movieAPI = {
       },
     }),
   search: term =>
-    api.get('movie/search', { params: { query: encodeURIComponent(term) } }),
+    api.get('search/movie', { params: { query: encodeURIComponent(term) } }),
 };
 
-const tvAPI = {
+export const tvAPI = {
   topRated: () => api.get('tv/top_rated'),
   popular: () => api.get('tv/popular'),
   airingToday: () => api.get('tv/airing_today'),
@@ -36,6 +36,5 @@ const tvAPI = {
       },
     }),
   search: term =>
-    api.get('tv/search', { params: { query: encodeURIComponent(term) } }),
+    api.get('search/tv', { params: { query: encodeURIComponent(term) } }),
 };
-export default api;
