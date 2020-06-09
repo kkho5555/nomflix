@@ -5,6 +5,7 @@ import Section from 'Components/Section';
 import Message from 'Components/Message';
 import Loader from 'Components/Loader';
 import Poster from 'Components/Poster';
+import { Helmet } from 'react-helmet';
 const Container = styled.div`
   padding: 0px 20px;
 `;
@@ -26,59 +27,68 @@ const SearchPresenter = ({
   error,
   updateTerm,
 }) => (
-  <Container>
-    <Form onSubmit={handleSubmit}>
-      <Input
-        placeholder="Search Movies or TV shows..."
-        value={searchTerm}
-        onChange={updateTerm}
-      />
-    </Form>
-    {loading ? (
-      <Loader />
-    ) : (
-      <>
-        {movieResults && movieResults.length > 0 && (
-          <Section title="Movie Results">
-            {movieResults.map(movie => (
-              <Poster
-                key={movie.id}
-                id={movie.id}
-                imageUrl={movie.poster_path}
-                title={movie.original_title}
-                rating={movie.vote_average}
-                year={movie.release_date && movie.release_date.substring(0, 4)}
-                isMovie={true}
-              />
-            ))}
-          </Section>
+  <>
+    <Helmet>
+      <title>Search | Nomflix</title>
+    </Helmet>
+    {
+      <Container>
+        <Form onSubmit={handleSubmit}>
+          <Input
+            placeholder="Search Movies or TV shows..."
+            value={searchTerm}
+            onChange={updateTerm}
+          />
+        </Form>
+        {loading ? (
+          <Loader />
+        ) : (
+          <>
+            {movieResults && movieResults.length > 0 && (
+              <Section title="Movie Results">
+                {movieResults.map(movie => (
+                  <Poster
+                    key={movie.id}
+                    id={movie.id}
+                    imageUrl={movie.poster_path}
+                    title={movie.original_title}
+                    rating={movie.vote_average}
+                    year={
+                      movie.release_date && movie.release_date.substring(0, 4)
+                    }
+                    isMovie={true}
+                  />
+                ))}
+              </Section>
+            )}
+            {showResults && showResults.length > 0 && (
+              <Section title="TV Show Results">
+                {showResults.map(show => (
+                  <Poster
+                    key={show.id}
+                    id={show.id}
+                    imageUrl={show.poster_path}
+                    title={show.original_name}
+                    rating={show.vote_average}
+                    year={
+                      show.first_air_date && show.first_air_date.substring(0, 4)
+                    }
+                  />
+                ))}
+              </Section>
+            )}
+          </>
         )}
-        {showResults && showResults.length > 0 && (
-          <Section title="TV Show Results">
-            {showResults.map(show => (
-              <Poster
-                key={show.id}
-                id={show.id}
-                imageUrl={show.poster_path}
-                title={show.original_name}
-                rating={show.vote_average}
-                year={
-                  show.first_air_date && show.first_air_date.substring(0, 4)
-                }
-              />
-            ))}
-          </Section>
-        )}
-      </>
-    )}
-    {error && <Message color="#e74c3c" text={error} />}
-    {showResults &&
-      movieResults &&
-      showResults.length === 0 &&
-      movieResults.length === 0 && (
-        <Message text="Nothing found" color="#95a5a6" />
-      )}
-  </Container>
+        {error && <Message color="#e74c3c" text={error} />}
+        {showResults &&
+          movieResults &&
+          showResults.length === 0 &&
+          movieResults.length === 0 && (
+            <Message text="Nothing found" color="#95a5a6" />
+          )}
+      </Container>
+    }
+  </>
 );
 
 SearchPresenter.propTypes = {

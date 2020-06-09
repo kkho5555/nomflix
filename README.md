@@ -4,10 +4,10 @@ TV쇼, 영화등 컨텐츠의 정보
 
 ## Screens
 
-- [ ] Home
-- [ ] TV show
-- [ ] Search
-- [ ] Detail
+- [x] Home
+- [x] TV show
+- [x] Search
+- [x] Detail
 
 ## API Verbs
 
@@ -19,3 +19,11 @@ TV쇼, 영화등 컨텐츠의 정보
 - [x] Movie Detail
 - [x] TV Show Detail
 - [x] Search (TV, Movie)
+
+## To add content
+
+- [ ] IMDB Link
+- [ ] Tabs inside of Movie / Show Details (YT Videos, Production Company & Countries)
+- [ ] Collection Link
+- [ ] "/collections" Route
+- [ ] On TV Show, show seasons and creators
