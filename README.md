@@ -1,4 +1,4 @@
-# NOTFLIX
+# NOMFLIX
 
 TV쇼, 영화등 컨텐츠의 정보
 
